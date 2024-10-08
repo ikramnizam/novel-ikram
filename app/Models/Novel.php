@@ -19,8 +19,10 @@ class Novel extends Model
 
 
     protected $casts = [
-        'published_at' => 'datetime', // This will ensure it's treated as a Carbon instance
+        'published_at' => 'datetime', 
     ];
+
+    
     // Relationship: A novel belongs to a user
     public function user()
     {

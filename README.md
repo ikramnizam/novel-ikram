@@ -38,4 +38,16 @@ PROJECT GUIDE
 3. click the link provided at laravel.log based on email provided while registering process
 4. then you will be redirected at the main page of project.
 5. create atleast 4 novel to see pagination
-6. for testing run "php artisan test"
+
+
+TESTING
+1. create testing databse
+2. run php artisan test
+
+
+DECISION MADE DURING DEVELOPMENT
+
+1. User passwords need to be secure and meet industry-standard complexity requirements.    Implemented password validation rules
+2. Users must verify their email before they can access full application functionality.
+3. Used Laravel's validation rules and custom validation logic to enforce strict input validation across forms, particularly for user registration, login, and profile updates.
+5. Laravel’s auth middleware is used to protect routes such as novels.index and profile update pages. Only logged-in users can access these areas.

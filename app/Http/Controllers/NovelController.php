@@ -35,6 +35,7 @@ class NovelController extends Controller
             // Default sorting
             $query->orderBy('published_at', 'desc'); // Default sort by latest published
         }
+        // dd($query);
     
         // Pagination: 3 novels per page
         $novels = $query->paginate(3);

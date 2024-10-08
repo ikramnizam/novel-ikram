@@ -29,7 +29,6 @@ class NovelController extends Controller
     // POST /api/novels: Create a new novel
     public function store(Request $request)
     {
-        // Validation
         $validator = Validator::make($request->all(), [
             'title' => 'required|string|max:255',
             'author' => 'required|string|max:255',
@@ -41,7 +40,6 @@ class NovelController extends Controller
             return response()->json($validator->errors(), 400);
         }
 
-        // Create a new novel
         $novel = Novel::create($request->all());
 
         return response()->json($novel, 201);
@@ -54,8 +52,6 @@ class NovelController extends Controller
         if (!$novel) {
             return response()->json(['error' => 'Novel not found'], 404);
         }
-
-        // Validation
         $validator = Validator::make($request->all(), [
             'title' => 'required|string|max:255',
             'author' => 'required|string|max:255',
@@ -67,7 +63,6 @@ class NovelController extends Controller
             return response()->json($validator->errors(), 400);
         }
 
-        // Update the novel
         $novel->update($request->all());
 
         return response()->json($novel, 200);
@@ -81,7 +76,6 @@ class NovelController extends Controller
             return response()->json(['error' => 'Novel not found'], 404);
         }
 
-        // Delete the novel
         $novel->delete();
 
         return response()->json(['message' => 'Novel deleted successfully'], 200);
