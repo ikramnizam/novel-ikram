@@ -33,12 +33,12 @@
                             <li class="nav-item text-white ">
                                 Welcome, {{ auth()->user()->name }}
                             </li>
-                            {{-- <li class="nav-item">
+                            <li class="nav-item">
                                 <form action="{{ route('novels.index') }}" method="GET" class="d-inline">
                                     @csrf
                                     <button type="submit" class="btn btn-link nav-link">Novels</button>
                                 </form>
-                            </li> --}}
+                            </li>
                             <li class="nav-item">
                                 <form action="{{ route('logout') }}" method="POST" class="d-inline">
                                     @csrf
