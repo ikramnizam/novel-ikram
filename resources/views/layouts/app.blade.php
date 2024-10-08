@@ -26,9 +26,12 @@
                             <a class="nav-link" href="{{ route('register') }}">Register</a>
                         </li>
                     @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('novels.index') }}">Novels</a>
-                        </li>
+                    <li class="nav-item">
+                        <form action="{{ route('novels.index') }}" method="GET" class="d-inline">
+                            @csrf
+                            <button type="submit" class="btn btn-link nav-link">Novels</button>
+                        </form>
+                    </li>
                         <li class="nav-item">
                             <form action="{{ route('logout') }}" method="POST" class="d-inline">
                                 @csrf

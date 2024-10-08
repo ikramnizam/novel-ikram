@@ -8,10 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 class NovelController extends Controller
 {
-    // Use constructor to apply middleware
     // public function __construct()
     // {
-    //     // Apply auth middleware to all methods
     //     $this->middleware('auth');
     // }
 
@@ -74,6 +72,8 @@ class NovelController extends Controller
         if ($novel->user_id != Auth::id()) {
             abort(403);
         }
+
+        // dd($novel);
 
         return view('novels.show', compact('novel'));
     }
